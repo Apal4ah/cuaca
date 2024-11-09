@@ -66,7 +66,7 @@ const getWeatherDetails = async (API_URL) => {
 };
 
 const setupWeatherRequest = (cityName) => {
-    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName}&days=2`;
+    const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName}&days=2`;
         getWeatherDetails(API_URL);
 };
 
@@ -81,7 +81,7 @@ searchInput.addEventListener('keyup', (e) => {
 locationButton.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition(position => {
         const { latitude, longitude } = position.coords;
-        const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}&days=2`;
+        const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}&days=2`;
         getWeatherDetails(API_URL);
     }, error => {
         alert('Akses lokasi di tolak. Silahkan mengaktifkan perizinan lokasi di pengaturan perangkat Anda.');
